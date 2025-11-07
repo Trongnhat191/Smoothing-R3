@@ -8,9 +8,9 @@ def main():
         " CUDA_VISIBLE_DEVICES=0 python train.py \
         --task RE \
         --lr 5e-6 \
-        --batch-size 1\
+        --batch-size 16\
         --accumulation-steps 16\
-        --epoch 16 \
+        --epoch 4 \
         --seed 41 \
         --re-model Roberta",
         shell=True,

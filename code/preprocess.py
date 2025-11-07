@@ -106,10 +106,13 @@ class HotpotREPipe(Pipe):
         res = {}
         for path in os.listdir(paths):
             if "train" in path:
+                print("process Train")
                 res["train"] = self.process(HotpotLoader()._load(os.path.join(paths, path)))
             elif "dev" in path:
+                print("process dev")
                 res["dev"] = self.process(HotpotLoader()._load(os.path.join(paths, path)))
             elif "test" in path:
+                print("process Test")
                 res["test"] = self.process(HotpotTestLoader()._load(os.path.join(paths, path)))
         return DataBundle(datasets=res)
 
